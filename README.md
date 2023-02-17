@@ -24,7 +24,7 @@ https://user-images.githubusercontent.com/13283837/217905601-6e1ff237-5275-4deb-
 
 ### 3.clone项目并安装依赖环境
 ```
-git clone https://github.com/wm7799/express-feishu-chatgpt#clone项目到本地服务器
+git clone https://github.com/wm7799/express-feishu-chatgpt  #clone项目到本地服务器
 cd ~/express-feishu-chatgpt #进入项目目录
 curl -sL https://deb.nodesource.com/setup_19.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
