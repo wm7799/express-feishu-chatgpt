@@ -43,11 +43,8 @@ const FEISHU_APP_ID = process.env.APPID || "飞书的应用 ID"; //
 const FEISHU_APP_SECRET = process.env.SECRET || "飞书的应用的 Secret"; // 
 const FEISHU_BOTNAME = process.env.BOTNAME || "飞书机器人的名字"; // 不能是中文
 const OPENAI_KEY = process.env.KEY || "OpenAI 的 APIKey"; // 
-
 ```
-
 -修改完成按ESC，输入:wq保存配置
-
 ### 5.启动nodejs服务
 `pm2 start index.js #服务运行在后台，端口9000；测试服务是否启动，浏览器输入IP:9000,返回成功提示即可`
 ### 6. 开启权限并配置事件
