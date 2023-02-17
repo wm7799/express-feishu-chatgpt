@@ -11,59 +11,37 @@ https://user-images.githubusercontent.com/13283837/217905601-6e1ff237-5275-4deb-
 > 视频教程见 -> https://youtu.be/axvH1D0Dhnk | https://www.bilibili.com/video/BV1uT411R7TL/
 
 ### 1. 创建一个飞书开放平台应用，并获取到 APPID 和 Secret
-
 访问 [开发者后台](https://open.feishu.cn/app?lang=zh-CN)，创建一个名为 **ChatGPT** 的应用，并上传应用头像。创建完成后，访问【凭证与基础信息】页面，复制 APPID 和 Secret 备用。
 
 ![image-20230210012031179](https://postimg.aliavv.com/picgo/202302100120339.png)
 
 ### 2. 开启机器人能力
-
 打开应用的机器人应用功能
 
 ![image-20230210012110735](https://postimg.aliavv.com/picgo/202302100121008.png)
 
 ### 3.clone项目并安装依赖环境
-
 ```
-
 git clone https://github.com/wm7799/express-feishu-chatgpt#clone项目到本地服务器
-
 cd ~/express-feishu-chatgpt #进入项目目录
-
 curl -sL https://deb.nodesource.com/setup_19.x -o nodesource_setup.sh
-
 sudo bash nodesource_setup.sh
-
 sudo apt install nodejs
-
 npm install -g npm@9.5.0 #安装npm
 
 npm install @larksuiteoapi/node-sdk #安装飞书lark依赖
-
 npm install axios #安装axios依赖
-
 npm install pm2@latest -g  #安装PM2管理
-
 npm install express 
-
 npm audit fix --force
-
 npm install express
-
 ```
-
 ### 4. 配置js环境变量
-
 `-vi index.js`
-
 ```
-
 const FEISHU_APP_ID = process.env.APPID || "飞书的应用 ID"; // 
-
 const FEISHU_APP_SECRET = process.env.SECRET || "飞书的应用的 Secret"; // 
-
 const FEISHU_BOTNAME = process.env.BOTNAME || "飞书机器人的名字"; // 不能是中文
-
 const OPENAI_KEY = process.env.KEY || "OpenAI 的 APIKey"; // 
 
 ```
@@ -71,13 +49,9 @@ const OPENAI_KEY = process.env.KEY || "OpenAI 的 APIKey"; //
 -修改完成按ESC，输入:wq保存配置
 
 ### 5.启动nodejs服务
-
 `pm2 start index.js #服务运行在后台，端口9000；测试服务是否启动，浏览器输入IP:9000,返回成功提示即可`
-
 ### 6. 开启权限并配置事件
-
 访问开放平台页面，开通如下 6 个权限：
-
 - im:message
 
 - im:message.group_at_msg
